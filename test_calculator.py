@@ -1,20 +1,22 @@
+#!/bin/bash
 """
 Unit tests for the calculator library
 """
 
-import calculator
+import unittest
+import mycalculator
 
 
-class TestCalculator:
+class TestMyCalculator(unittest.TestCase):
 
     def test_addition(self):
-        assert 4 == calculator.add(2, 2)
+        self.assertEqual(mycalculator.add(2, 2), 4)
 
     def test_subtraction(self):
-        assert 2 == calculator.subtract(4, 2)
+        self.assertEqual(mycalculator.subtract(4, 2), 2)
 
     def test_multiplication(self):
-        assert 100 == calculator.multiply(10, 10)
+        self.assertEqual(mycalculator.multiply(10, 10), 100)
 
     def test_division(self):
-        assert 5 == calculator.divide(100, 20)
+        self.assertEqual(mycalculator.divide(100, 20), 5)
